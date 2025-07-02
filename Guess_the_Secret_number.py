@@ -19,14 +19,9 @@ class Game:
         self.game_over = False
         self.current_play_index = 0
         
-    def start_game(self):
-        print("Welcome to the Guess the Secret Number Game!!")
-        print(f"Guess the secret number between {self.min_range} and {self.max_range}")
-        
-        
     def play_round(self):
-        self.start_game()
-        
+        #self.start_game()
+        print(f"Guess the secret number between {self.min_range} and {self.max_range}") 
         for player in self.players:
             print(f"\n--- {player.name}'s Turn to guess their number! ---")
             
@@ -71,7 +66,29 @@ class Player:
         self.attempts_made = 0
         self.has_won = False
         self.secret_number = secret_number
-        
+
+          
 if __name__ == "__main__":
-    guess_game = Game(10, 50, 1)
-    guess_game.play_round()
+    
+    print("Welcome to the Guess the Secret Number Game!!")
+    
+    while True:
+        print("Select the one of the options below:")
+        try:
+            user_option = int(input("1. Single Player \n2. Multiple Player \n3. Exit\n\n"))
+        except ValueError:
+            print("Invalid Option, Give input in integer")
+                
+        if user_option == 1:
+                guess_game = Game(10, 50)
+                guess_game.play_round()
+        elif user_option ==2:
+            try:
+                num_of_players = int(input("Enter the number of players:"))
+                guess_game = Game(10, 50, num_of_players)
+                guess_game.play_round()
+            except ValueError:
+                print("Invalid entry,Enter the number of players in integer")
+        
+        else:
+            break        

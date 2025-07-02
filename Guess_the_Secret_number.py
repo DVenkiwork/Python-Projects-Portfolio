@@ -39,7 +39,7 @@ class Game:
                     print("Your guess is Lower!")
                     player.attempts_made = player.attempts_made + 1
                 else:
-                    print("You got it!!")
+                    print(f"You got it!! The Secret number was {player.secret_number}")
                     player.attempts_made = player.attempts_made + 1
                     player.has_won = True
                     break

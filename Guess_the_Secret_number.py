@@ -85,17 +85,22 @@ if __name__ == "__main__":
             user_option = int(input("1. Single Player \n2. Multiple Player \n3. Exit\n\n"))
         except ValueError:
             print("Invalid Option, Give input in integer")
+            continue
                 
         if user_option == 1:
                 guess_game = Game(10, 50)
                 guess_game.play_round()
         elif user_option ==2:
-            try:
-                num_of_players = int(input("Enter the number of players:"))
-                guess_game = Game(10, 50, num_of_players)
-                guess_game.play_round()
-            except ValueError:
-                print("Invalid entry,Enter the number of players in integer")
-        
+            while True:
+                
+                try:
+                    num_of_players = int(input("Enter the number of players:"))
+                    break                    
+                except ValueError:
+                    print("Invalid entry,Enter the number of players in integer")
+                    continue
+                
+            guess_game = Game(10, 50, num_of_players)
+            guess_game.play_round()
         else:
             break        

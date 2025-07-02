@@ -1,4 +1,11 @@
 # Guess the Secret number.py
+# Objective:
+# •	Start with a welcome message.
+# •	Tell the player the range of numbers (e.g., "I'm thinking of a number between 1 and 100").
+# •	Keep asking for guesses until the player guesses correctly.
+# •	After each incorrect guess, tell the player if their guess was "too high" or "too low".
+# •	When they guess correctly, congratulate them!
+# •	I plan to introduce single or multiple player as well and declare the winner based on lesser attempts they made
 #
 
 import random

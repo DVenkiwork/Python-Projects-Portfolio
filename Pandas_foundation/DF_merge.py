@@ -24,6 +24,9 @@ orders2 = {
 }
 df_orders = pd.DataFrame(orders1)
 
+df_customers['Status'] = ['Active', 'Active','Inactive','Inactive','Active']
+df_orders['Status'] = ['New','Shipped','Processed','Delivered','New','Arrived']
+
 print("df_customers:\n", df_customers)
 print("\ndf_orders:\n", df_orders)
 
@@ -63,3 +66,6 @@ print(f"{pd.merge(df_customers, df_orders, left_index= True, right_on='ClientID'
 
 print("\n\n----Merge with added Left_index= True, right_index = True how = 'right' with customers, orders-----")
 print(f"{pd.merge(df_customers, df_orders, left_index= True, right_index = True, how='right')}")
+
+print("\n\n----Merge with added suffixes-----")
+print(f"{pd.merge(df_customers, df_orders, left_index= True, right_index = True, suffixes=('_Cust_info', '_Order_info'))}")

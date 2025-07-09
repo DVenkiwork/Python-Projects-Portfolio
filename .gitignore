@@ -195,3 +195,7 @@ cython_debug/
 
 #local files
 Muthu_project_ideas.py
+
+# Ignore large data files
+*.csv
+*.zip
